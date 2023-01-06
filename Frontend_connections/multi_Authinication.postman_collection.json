@@ -408,6 +408,97 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "set_available_times",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "expert_id",
+									"value": "5",
+									"type": "default"
+								},
+								{
+									"key": "days",
+									"value": "1:Sunday\n",
+									"type": "default"
+								},
+								{
+									"key": "sun_s",
+									"value": "6.00.00",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "sun_e",
+									"value": "13.00",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "tue_s",
+									"value": "9.00",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "tue_e",
+									"value": "17.00",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "mon_s",
+									"value": "2:20:12",
+									"type": "default"
+								},
+								{
+									"key": "mon_e",
+									"value": "14.00",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "step",
+									"value": "70",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/expert/businesstimes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"expert",
+								"businesstimes"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

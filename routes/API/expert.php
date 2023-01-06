@@ -19,7 +19,6 @@ use App\Models\Expert;
 
 Route::post('expert/register'   ,   [AuthController::class ,'Expert_Register']);
 Route::post('expert/login'   ,      [AuthController::class ,'Expert_Login']);
-Route::post('expert/businesstimes'   ,[AuthController::class ,'Expert_Set_Times']);
 Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('categories',[CategoryController::class, 'index']);
 //Route::get('search',[SearchController::class, 'search']);
@@ -30,4 +29,6 @@ Route::get('categories',[CategoryController::class, 'index']);
 Route::group( ['prefix' => 'expert','middleware' => ['auth:expert-api','scopes:expert'] ], function(){
        Route::post('update',[AuthController::class, 'Expert_Update']);
        Route::post('logout',[AuthController::class, 'Expert_Logout']);
+       Route::post('expert/businesstimes'   ,[AuthController::class ,'Expert_Set_Times']);
+
 });
