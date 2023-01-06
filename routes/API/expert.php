@@ -19,6 +19,7 @@ use App\Models\Expert;
 
 Route::post('expert/register'   ,   [AuthController::class ,'Expert_Register']);
 Route::post('expert/login'   ,      [AuthController::class ,'Expert_Login']);
+Route::post('expert/businesstimes'   ,[AuthController::class ,'Expert_Set_Times']);
 Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('categories',[CategoryController::class, 'index']);
 //Route::get('search',[SearchController::class, 'search']);

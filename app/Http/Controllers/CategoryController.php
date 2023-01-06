@@ -21,7 +21,7 @@ class CategoryController extends Controller
     public function experts($category_id)
     {
         $experts = Expert::where(['category_id'=> $category_id])
-            ->get(['name'  ,'rating' , 'profile_image' , 'specialization']);
+            ->get(['id','name'  ,'rating' , 'profile_image' , 'specialization']);
             return response() -> json(['experts' => $experts] , 200);
           
 

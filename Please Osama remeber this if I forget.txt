@@ -10,3 +10,4 @@ Notes to add for the projct:
 8)handle all exceptions that you forget 
 9) there are many topics that I SAVED IN mY FAVOURITS REMEMBER TO TAKE A LOOK AT
 10)remember to protect routes using passport clients 
+11) Ask the user to be an expert

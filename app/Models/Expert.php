@@ -58,6 +58,12 @@ class Expert extends Authenticatable
         return $this->belongsTo(Category::class);
 
     }
+
+      public function business_times()
+    {
+        return $this->hasMany(BusinessTime::class);
+
+    }
 }
 
 

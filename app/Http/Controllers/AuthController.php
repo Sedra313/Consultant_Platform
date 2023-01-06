@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 use File;
 use App\Models\Expert;
 use App\Models\User;
+use App\Models\BusinessTime;
+
 class AuthController extends Controller
 {
     public function User_Register(Request $request)
@@ -152,7 +154,47 @@ Public
                     'message' => 'Profile Successfully updated',
                ],200);
          
+    
+
+}
+
+public function Expert_Set_Times(Request $request) : JsonResponse
+    {
+        $inputs = $request->all();
+     if(!empty($inputs)){
+        $btimes = new BusinessTime;
+        $btimes->expert_id = $inputs['expert_id'] ;
+        $btimes->days = json_encode($inputs['days']);
+        $btimes->mon_s = isset($inputs['mon_s']  ? $inputs['mon_s'] : '';
+        $btimes->mon_e = isset($inputs['mon_e']) ? $inputs['mon_e'] : '';
+        $btimes->tue_s = isset($inputs['tue_s']) ? $inputs['tue_s'] : '';
+        $btimes->tue_e = isset($inputs['tue_e']) ? $inputs['tue_e'] : '';
+        $btimes->wed_s = isset($inputs['wed_s']) ? $inputs['wed_s'] : '';
+        $btimes->wed_e = isset($inputs['wed_e']) ? $inputs['wed_e'] : '';
+        $btimes->thu_s = isset($inputs['thu_s']) ? $inputs['thu_s'] : '';
+        $btimes->thu_e = isset($inputs['thu_e']) ? $inputs['thu_e'] : '';
+        $btimes->fri_s = isset($inputs['fri_s']) ? $inputs['fri_s'] : '';
+        $btimes->fri_e = isset($inputs['fri_e']) ? $inputs['fri_e'] : '';
+        $btimes->sat_s = isset($inputs['sat_s']) ? $inputs['sat_s'] : '';
+        $btimes->sat_e = isset($inputs['sat_e']) ? $inputs['sat_e'] : '';
+        $btimes->sun_s = isset($inputs['sun_s']) ? $inputs['sun_s'] : '';
+        $btimes->sun_e = isset($inputs['sun_e']) ? $inputs['sun_e'] : '';
+        $btimes->step = $inputs['step'] ;
+
+    if($btimes->save()){
+            return response() -> json([
+                    'message' => 'You set your times successfully',
+               ],200);
+        
+       }
     }
+}
+
+
+
+
+  
+
 
     public function Expert_Login(Request $request) : JsonResponse
     {

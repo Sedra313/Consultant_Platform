@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('experts', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->id();
+            $table->bigIncrements('id');            
             $table->string('name');
             $table->string('email')->unique();
            $table->bigInteger('category_id')->unsigned()->nullable() ;// here is the probleme ;)

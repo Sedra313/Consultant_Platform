@@ -15,7 +15,7 @@ class SearchController extends Controller
     public function experts_search(Request $request)
        { 
 #Remember that is not enough you have to add extra attribute sto search and sort by
-        $query = Expert::select(['name'  ,'rating' , 'profile_image' , 'specialization']) 
+        $query = Expert::select(['id','name','rating' , 'profile_image' , 'specialization']) 
        ->where('name','LIKE','%'.$request->name.'%')
        ->get();
             return response()->json([
